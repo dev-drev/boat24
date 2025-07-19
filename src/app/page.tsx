@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import {
   Search,
   MapPin,
@@ -27,18 +27,21 @@ export default function Home() {
               <h1 className="text-2xl font-bold text-gray-900">BOAT24</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="/" className="text-blue-600 font-medium">
+              <Link href="/" className="text-blue-600 font-medium">
                 Home
-              </a>
-              <a href="/barche" className="text-gray-700 hover:text-blue-600">
+              </Link>
+              <Link
+                href="/barche"
+                className="text-gray-700 hover:text-blue-600"
+              >
                 Barche
-              </a>
-              <a href="#" className="text-gray-700 hover:text-blue-600">
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-blue-600">
                 La Mia Patente
-              </a>
-              <a href="#" className="text-gray-700 hover:text-blue-600">
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-blue-600">
                 Contatti
-              </a>
+              </Link>
             </nav>
             <div className="flex items-center space-x-4">
               <button
@@ -155,12 +158,12 @@ export default function Home() {
               <div className="text-2xl font-bold text-green-600 mb-4">
                 da €150/giorno
               </div>
-              <a
+              <Link
                 href="/barche?type=con-skipper"
                 className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 inline-block"
               >
                 Sfoglia barche con skipper
-              </a>
+              </Link>
             </div>
 
             {/* Senza Skipper */}
@@ -184,12 +187,12 @@ export default function Home() {
               <div className="text-2xl font-bold text-blue-600 mb-4">
                 da €80/giorno
               </div>
-              <a
+              <Link
                 href="/barche?type=senza-skipper"
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 inline-block"
               >
                 Sfoglia barche senza skipper
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -215,12 +218,12 @@ export default function Home() {
                 <div>Capacità: 4-8 persone</div>
                 <div>Patente: A o B (senza skipper)</div>
               </div>
-              <a
+              <Link
                 href="/barche?category=gommone"
                 className="text-blue-600 hover:text-blue-700 font-medium"
               >
                 Sfoglia gommoni →
-              </a>
+              </Link>
             </div>
 
             {/* Barche a Vela */}
@@ -236,12 +239,12 @@ export default function Home() {
                 <div>Capacità: 6-12 persone</div>
                 <div>Patente: Vela (senza skipper)</div>
               </div>
-              <a
+              <Link
                 href="/barche?category=vela"
                 className="text-blue-600 hover:text-blue-700 font-medium"
               >
                 Sfoglia barche a vela →
-              </a>
+              </Link>
             </div>
 
             {/* Motoscafi */}
@@ -255,12 +258,12 @@ export default function Home() {
                 <div>Capacità: 8-15 persone</div>
                 <div>Patente: A o B (senza skipper)</div>
               </div>
-              <a
+              <Link
                 href="/barche?category=motoscafo"
                 className="text-blue-600 hover:text-blue-700 font-medium"
               >
                 Sfoglia motoscafi →
-              </a>
+              </Link>
             </div>
 
             {/* Catamarani */}
@@ -274,12 +277,12 @@ export default function Home() {
                 <div>Capacità: 10-20 persone</div>
                 <div>Patente: Vela (senza skipper)</div>
               </div>
-              <a
+              <Link
                 href="/barche?category=catamarano"
                 className="text-blue-600 hover:text-blue-700 font-medium"
               >
                 Sfoglia catamarani →
-              </a>
+              </Link>
             </div>
           </div>
         </div>

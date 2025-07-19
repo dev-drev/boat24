@@ -1,10 +1,10 @@
+import Link from "next/link";
 import {
   Search,
   Filter,
   Star,
   MapPin,
   Users,
-  Calendar,
   UserCheck,
   UserX,
   Anchor,
@@ -109,18 +109,18 @@ export default function BarchePage() {
               <h1 className="text-2xl font-bold text-gray-900">RentABoat</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="/" className="text-gray-700 hover:text-blue-600">
+              <Link href="/" className="text-gray-700 hover:text-blue-600">
                 Home
-              </a>
-              <a href="/barche" className="text-blue-600 font-medium">
+              </Link>
+              <Link href="/barche" className="text-blue-600 font-medium">
                 Barche
-              </a>
-              <a href="#" className="text-gray-700 hover:text-blue-600">
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-blue-600">
                 La Mia Patente
-              </a>
-              <a href="#" className="text-gray-700 hover:text-blue-600">
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-blue-600">
                 Contatti
-              </a>
+              </Link>
             </nav>
             <div className="flex items-center space-x-4">
               <button className="text-gray-700 hover:text-blue-600">
@@ -277,18 +277,18 @@ export default function BarchePage() {
                   </div>
 
                   <div className="flex gap-3">
-                    <a
+                    <Link
                       href={`/barche/${boat.id}`}
                       className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center"
                     >
                       Prenota ora
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href={`/barche/${boat.id}`}
                       className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-center"
                     >
                       Dettagli
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -315,18 +315,18 @@ export default function BarchePage() {
             la navigazione senza preoccupazioni.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <a
+            <Link
               href="/barche?skipper=true"
               className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
             >
               Barche con Skipper
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-white border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
             >
               Informazioni Patente
-            </a>
+            </Link>
           </div>
         </div>
       </section>
