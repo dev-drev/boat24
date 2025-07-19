@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { supabase, User } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
+import type { User } from "@supabase/supabase-js";
 
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
@@ -21,14 +22,7 @@ export function useAuth() {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
       if (session?.user) {
-        // Ottieni i dati completi dell'utente dal database
-        const { data: userData } = await supabase
-          .from("users")
-          .select("*")
-          .eq("id", session.user.id)
-          .single();
-
-        setUser(userData);
+        setUser(session.user);
       } else {
         setUser(null);
       }

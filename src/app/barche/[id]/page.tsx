@@ -1,4 +1,13 @@
-import { Star, MapPin, Users, Calendar, Anchor, Phone, Mail, Clock, Shield } from "lucide-react";
+import Link from "next/link";
+import {
+  Star,
+  MapPin,
+  Users,
+  Calendar,
+  Anchor,
+  Clock,
+  Shield,
+} from "lucide-react";
 
 const boat = {
   id: 1,
@@ -14,25 +23,31 @@ const boat = {
   year: 2022,
   features: [
     "Motore 40HP",
-    "GPS integrato", 
+    "GPS integrato",
     "Tenda parasole",
     "Ghiacciaia",
     "Scaletta di accesso",
     "Ancora",
     "Giubbotti di salvataggio",
-    "Kit di sicurezza"
+    "Kit di sicurezza",
   ],
-  description: "Gommone Zodiac professionale in perfette condizioni, ideale per escursioni giornaliere e snorkeling. Dotato di tutti i comfort necessari per una giornata in mare sicura e confortevole.",
+  description:
+    "Gommone Zodiac professionale in perfette condizioni, ideale per escursioni giornaliere e snorkeling. Dotato di tutti i comfort necessari per una giornata in mare sicura e confortevole.",
   owner: {
     name: "Marco Rossi",
     rating: 4.9,
     reviews: 128,
-    responseTime: "1 ora"
+    responseTime: "1 ora",
   },
-  images: ["🛥️", "🌊", "⛵", "🏖️"]
+  images: ["🛥️", "🌊", "⛵", "🏖️"],
 };
 
-export default function BoatDetailPage({ params }: { params: { id: string } }) {
+export default async function BoatDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  // const { id } = await params; // Will be used when implementing dynamic data
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -44,13 +59,23 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
               <h1 className="text-2xl font-bold text-gray-900">RentABoat</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="/" className="text-gray-700 hover:text-blue-600">Home</a>
-              <a href="/barche" className="text-blue-600 font-medium">Barche</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600">Destinazioni</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600">Contatti</a>
+              <Link href="/" className="text-gray-700 hover:text-blue-600">
+                Home
+              </Link>
+              <Link href="/barche" className="text-blue-600 font-medium">
+                Barche
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-blue-600">
+                Destinazioni
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-blue-600">
+                Contatti
+              </Link>
             </nav>
             <div className="flex items-center space-x-4">
-              <button className="text-gray-700 hover:text-blue-600">Accedi</button>
+              <button className="text-gray-700 hover:text-blue-600">
+                Accedi
+              </button>
               <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
                 Registrati
               </button>
@@ -72,7 +97,10 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
                   </div>
                 </div>
                 {boat.images.slice(1).map((image, index) => (
-                  <div key={index} className="text-3xl text-center bg-gray-100 rounded-lg p-4">
+                  <div
+                    key={index}
+                    className="text-3xl text-center bg-gray-100 rounded-lg p-4"
+                  >
                     {image}
                   </div>
                 ))}
@@ -83,7 +111,9 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
             <div className="bg-white rounded-xl p-6 mb-8">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">{boat.name}</h1>
+                  <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                    {boat.name}
+                  </h1>
                   <div className="flex items-center text-gray-600 mb-4">
                     <MapPin className="h-5 w-5 mr-2" />
                     {boat.location}
@@ -91,11 +121,15 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
                   <div className="flex items-center">
                     <Star className="h-5 w-5 text-yellow-400 mr-1" />
                     <span className="font-medium">{boat.rating}</span>
-                    <span className="text-gray-500 ml-1">({boat.reviews} recensioni)</span>
+                    <span className="text-gray-500 ml-1">
+                      ({boat.reviews} recensioni)
+                    </span>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-blue-600">€{boat.price}</div>
+                  <div className="text-3xl font-bold text-blue-600">
+                    €{boat.price}
+                  </div>
                   <div className="text-gray-500">al giorno</div>
                 </div>
               </div>
@@ -121,13 +155,17 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
 
               <div className="border-t pt-6">
                 <h3 className="text-lg font-semibold mb-4">Descrizione</h3>
-                <p className="text-gray-600 leading-relaxed">{boat.description}</p>
+                <p className="text-gray-600 leading-relaxed">
+                  {boat.description}
+                </p>
               </div>
             </div>
 
             {/* Features */}
             <div className="bg-white rounded-xl p-6 mb-8">
-              <h3 className="text-lg font-semibold mb-4">Caratteristiche e Attrezzature</h3>
+              <h3 className="text-lg font-semibold mb-4">
+                Caratteristiche e Attrezzature
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {boat.features.map((feature, index) => (
                   <div key={index} className="flex items-center">
@@ -145,7 +183,10 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                     <span className="text-blue-600 font-semibold">
-                      {boat.owner.name.split(' ').map(n => n[0]).join('')}
+                      {boat.owner.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
                     </span>
                   </div>
                   <div>
@@ -167,8 +208,10 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
           {/* Booking Sidebar */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl p-6 shadow-sm sticky top-8">
-              <h3 className="text-xl font-semibold mb-4">Prenota questa barca</h3>
-              
+              <h3 className="text-xl font-semibold mb-4">
+                Prenota questa barca
+              </h3>
+
               <div className="space-y-4 mb-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -179,7 +222,7 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Data di ritorno
@@ -189,7 +232,7 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Numero passeggeri
@@ -229,7 +272,7 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
               <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 font-medium mb-4">
                 Prenota ora
               </button>
-              
+
               <button className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-50 font-medium mb-4">
                 Contatta proprietario
               </button>
@@ -244,4 +287,4 @@ export default function BoatDetailPage({ params }: { params: { id: string } }) {
       </div>
     </div>
   );
-} 
+}

@@ -7,7 +7,6 @@ import {
   Users,
   UserCheck,
   UserX,
-  Anchor,
 } from "lucide-react";
 
 const boats = [

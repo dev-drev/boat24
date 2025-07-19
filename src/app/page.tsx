@@ -342,8 +342,8 @@ export default function Home() {
                 <h3 className="text-xl font-bold">RentABoat</h3>
               </div>
               <p className="text-gray-400">
-                La tua piattaforma di fiducia per l'affitto di imbarcazioni in
-                Italia.
+                La tua piattaforma di fiducia per l&apos;affitto di imbarcazioni
+                in Italia.
               </p>
             </div>
             <div>

@@ -37,7 +37,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
       
       onSuccess()
       onClose()
-    } catch (err) {
+    } catch {
       setError('Si è verificato un errore. Riprova.')
     } finally {
       setLoading(false)
