@@ -59,13 +59,32 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          {/* Boat Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url(/assets/boat.webp)",
+            }}
+          ></div>
+
+          {/* Overlay Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-cyan-700/80"></div>
+
+          {/* Ocean Waves Effect */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-800/60 to-transparent">
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 120%22%3E%3Cpath d=%22M0 120 L0 80 Q300 60 600 80 T1200 80 L1200 120 Z%22 fill=%22%23ffffff%22 opacity=%220.2%22/%3E%3Cpath d=%22M0 120 L0 90 Q300 70 600 90 T1200 90 L1200 120 Z%22 fill=%22%23ffffff%22 opacity=%220.1%22/%3E%3C/svg%3E')] bg-repeat-x opacity-40"></div>
+          </div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Affitta la tua
-            <span className="text-blue-600"> barca ideale</span>
+            <span className="text-cyan-300"> barca ideale</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
             Scegli tra barche con skipper professionale o noleggia autonomamente
             se hai la patente nautica. Esperienze su misura per ogni livello di
             esperienza.
